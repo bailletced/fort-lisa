@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/adapters" />
+            <option value="$PROJECT_DIR$/adapters/authentication" />
+            <option value="$PROJECT_DIR$/adapters/config" />
+            <option value="$PROJECT_DIR$/adapters/graphql" />
+            <option value="$PROJECT_DIR$/adapters/logging" />
+            <option value="$PROJECT_DIR$/adapters/repositories" />
+            <option value="$PROJECT_DIR$/domain" />
+            <option value="$PROJECT_DIR$/infrastructure" />
+            <option value="$PROJECT_DIR$/infrastructure/ktor" />
+            <option value="$PROJECT_DIR$/use-cases" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/domain" />
+        <option name="gradleHome" value="" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/domain" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
