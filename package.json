@@ -1,0 +1,20 @@
+{
+  "name": "fort-lisa",
+  "scripts": {
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "lint-staged": "^13.0.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.(kt|ktp|kts)": [
+      "gradlew ktlintFormat"
+    ]
+  }
+}

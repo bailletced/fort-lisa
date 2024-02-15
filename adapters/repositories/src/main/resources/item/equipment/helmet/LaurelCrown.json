@@ -1,0 +1,16 @@
+{
+  "category": "Helmet",
+  "id": "LaurelCrown",
+  "tier": 1,
+  "material": {
+    "base": "leather helmet"
+  },
+  "giftCapacity": {
+    "will": 1,
+    "intellect": 1,
+    "memory": 1
+  },
+  "stat": {
+    "defence": "2"
+  }
+}
