@@ -9,10 +9,21 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/adapters" />
+            <option value="$PROJECT_DIR$/adapters/deserializers" />
+            <option value="$PROJECT_DIR$/adapters/flEntities" />
+            <option value="$PROJECT_DIR$/adapters/flItems" />
             <option value="$PROJECT_DIR$/adapters/repositories" />
             <option value="$PROJECT_DIR$/adapters/serialization" />
             <option value="$PROJECT_DIR$/domain" />
+            <option value="$PROJECT_DIR$/infrastructure" />
+            <option value="$PROJECT_DIR$/item" />
+            <option value="$PROJECT_DIR$/item/equipment" />
+            <option value="$PROJECT_DIR$/item/gift" />
+            <option value="$PROJECT_DIR$/item/skill" />
+            <option value="$PROJECT_DIR$/shared" />
+            <option value="$PROJECT_DIR$/stat" />
             <option value="$PROJECT_DIR$/use-cases" />
+            <option value="$PROJECT_DIR$/use-cases/infra" />
           </set>
         </option>
       </GradleProjectSettings>
