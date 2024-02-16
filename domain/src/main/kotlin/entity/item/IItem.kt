@@ -1,21 +1,23 @@
 package entity.item
 
+import element.IElement
 import entity.StatEntity
 import entity.item.gift.GiftCapacityEntity
 import entity.item.gift.GiftWill
 
-interface ItemType
+interface IItemType
 
-interface ItemCategory
+interface IItemCategory
 
-interface ItemId
+interface IItemId
 
-interface Item {
-    val type: ItemType
-    val category: ItemCategory
-    val id: ItemId
+interface IItem {
+    val type: IItemType
+    val category: IItemCategory
+    val id: IItemId
     val tier: Int
     val stat: StatEntity
     val material: Map<GiftWill, String>
     val giftCapacity: GiftCapacityEntity?
+    val elements: List<IElement>
 }

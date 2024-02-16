@@ -1,7 +1,7 @@
 package entity.item.equipment
 
-import entity.item.ItemId
+import entity.item.IItemId
 
-enum class EquipmentId(val category: EquipmentCategory) : ItemId {
+enum class EquipmentId(val category: EquipmentCategory) : IItemId {
     LaurelCrown(EquipmentCategory.Helmet),
 }
