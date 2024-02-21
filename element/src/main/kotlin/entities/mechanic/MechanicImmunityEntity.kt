@@ -1,8 +1,8 @@
-package element.entities.mechanic
+package entities.mechanic
 
-import element.entities.ElementType
-import element.entities.IElement
-import element.entities.IElementData
+import entities.ElementType
+import entities.IElement
+import entities.IElementData
 import kotlinx.serialization.Serializable
 
 @Serializable
@@ -12,7 +12,7 @@ data class MechanicImmunityEntity(
     override val data: MechanicImmunityEntityData,
     override val children: List<IElement> = listOf(),
 ) : IElement {
-    override fun toString(): String = "$type $id $data $children"
+    override fun toString(): String = "$type $data $children"
 }
 
 @Serializable

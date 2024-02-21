@@ -1,9 +1,9 @@
 package entity.item
 
-import element.entities.IElement
 import entities.GiftCapacityEntity
 import entities.GiftWill
-import stat.entities.StatEntity
+import entities.ICommonStat
+import entities.IElement
 
 interface IItemType
 
@@ -16,7 +16,7 @@ interface IItem {
     val category: IItemCategory
     val id: IItemId
     val tier: Int
-    val stat: StatEntity
+    val stat: ICommonStat
     val material: Map<GiftWill, String>
     val giftCapacity: GiftCapacityEntity?
     val elements: List<IElement>

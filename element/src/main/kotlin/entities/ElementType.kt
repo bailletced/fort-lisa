@@ -1,4 +1,4 @@
-package element.entities
+package entities
 
 import kotlinx.serialization.Serializable
 

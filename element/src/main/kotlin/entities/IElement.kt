@@ -1,11 +1,11 @@
-package element.entities
+package entities
 
-import element.entities.mechanic.MechanicId
-import element.entities.mechanic.MechanicImmunityEntity
-import element.entities.mechanic.MechanicSkillEntity
-import element.entities.trigger.TriggerClickEntity
-import element.entities.trigger.TriggerId
-import element.entities.trigger.TriggerWearingEntity
+import entities.mechanic.MechanicId
+import entities.mechanic.MechanicImmunityEntity
+import entities.mechanic.MechanicSkillEntity
+import entities.trigger.TriggerClickEntity
+import entities.trigger.TriggerId
+import entities.trigger.TriggerWearingEntity
 import kotlinx.serialization.DeserializationStrategy
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.JsonContentPolymorphicSerializer
@@ -13,17 +13,17 @@ import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.jsonObject
 import kotlinx.serialization.json.jsonPrimitive
 
-interface IElementId
-
-interface IElementData
-
 @Serializable(with = DElementSerializer::class)
 interface IElement {
     val type: ElementType
-    val id: IElementId
+    val id: IElementId?
     val data: IElementData?
     val children: List<IElement>?
 }
+
+interface IElementId
+
+interface IElementData
 
 object DElementSerializer : JsonContentPolymorphicSerializer<IElement>(IElement::class) {
     override fun selectDeserializer(element: JsonElement): DeserializationStrategy<IElement> {

@@ -4,7 +4,5 @@ plugins {
 }
 
 dependencies {
-    implementation(project(":item"))
-    implementation(project(":shared"))
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
 }

@@ -9,15 +9,7 @@ repositories {
 
 dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test")
-    implementation(project(":shared"))
-    implementation(project(":element"))
-    implementation(project(":item:gift"))
+    testImplementation(kotlin("test"))
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
-}
-
-tasks.test {
-    useJUnitPlatform()
-}
-kotlin {
-    jvmToolchain(17)
+    implementation(project(":item:skill"))
 }

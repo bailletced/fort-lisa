@@ -1,9 +1,7 @@
-package element.entities.mechanic
 
-import element.entities.ElementType
-import element.entities.IElement
-import element.entities.IElementData
-import entities.SkillId
+package entities.mechanic
+
+import entities.*
 import kotlinx.serialization.Serializable
 
 @Serializable

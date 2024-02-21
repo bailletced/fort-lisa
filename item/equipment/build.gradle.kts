@@ -4,8 +4,11 @@ plugins {
 }
 
 dependencies {
+    testImplementation(kotlin("test"))
     implementation(project(":item"))
-    implementation(project(":shared"))
     implementation(project(":item:gift"))
+    implementation(project(":item:skill"))
+    implementation(project(":element"))
+    implementation(project(":shared"))
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
 }

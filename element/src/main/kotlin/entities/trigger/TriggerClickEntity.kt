@@ -1,8 +1,8 @@
-package element.entities.trigger
+package entities.trigger
 
-import element.entities.ElementType
-import element.entities.IElement
-import element.entities.IElementData
+import entities.ElementType
+import entities.IElement
+import entities.IElementData
 import kotlinx.serialization.Serializable
 
 @Serializable
