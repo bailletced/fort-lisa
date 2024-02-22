@@ -1,0 +1,52 @@
+{
+  "category": "Staff",
+  "id": "LimbOfWisdom",
+  "tier": 1,
+  "material": {
+    "Base": "carrot on stick"
+  },
+  "giftCapacity": {
+    "will": 1,
+    "intellect": 1,
+    "memory": 1
+  },
+  "stat": {
+    "attack": "2"
+  },
+  "elements": [
+    {
+      "type": "Trigger",
+      "id": "Click",
+      "data": {
+        "clickId": "LeftClick"
+      },
+      "children": [
+        {
+          "type": "Mechanic",
+          "id": "Skill",
+          "data": {
+            "action": "Cast",
+            "skillId": "BurningBall"
+          }
+        }
+      ]
+    },
+    {
+      "type": "Trigger",
+      "id": "Click",
+      "data": {
+        "clickId": "RightClick"
+      },
+      "children": [
+        {
+          "type": "Mechanic",
+          "id": "Skill",
+          "data": {
+            "action": "Cast",
+            "skillId": "BurningCylinder"
+          }
+        }
+      ]
+    }
+  ]
+}

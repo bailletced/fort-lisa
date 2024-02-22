@@ -1,0 +1,41 @@
+{
+  "category": "Helmet",
+  "id": "LaurelCrown",
+  "tier": 1,
+  "material": {
+    "Base": "leather helmet"
+  },
+  "giftCapacity": {
+    "will": 1,
+    "intellect": 1,
+    "memory": 1
+  },
+  "stat": {
+    "defence": "2"
+  },
+  "elements": [
+    {
+      "type": "Trigger",
+      "id": "Wearing",
+      "data": null,
+      "children": [
+        {
+          "type": "Mechanic",
+          "id": "Skill",
+          "data": {
+            "action": "Give",
+            "skillId": "BurningHead"
+          }
+        },
+        {
+          "type": "Mechanic",
+          "id": "Immunity",
+          "data": {
+            "immunityId": "Fire",
+            "amount": "0.2"
+          }
+        }
+      ]
+    }
+  ]
+}

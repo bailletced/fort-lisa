@@ -16,6 +16,7 @@
             <option value="$PROJECT_DIR$/adapters/serialization" />
             <option value="$PROJECT_DIR$/domain" />
             <option value="$PROJECT_DIR$/element" />
+            <option value="$PROJECT_DIR$/infra" />
             <option value="$PROJECT_DIR$/infrastructure" />
             <option value="$PROJECT_DIR$/item" />
             <option value="$PROJECT_DIR$/item/equipment" />

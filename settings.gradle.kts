@@ -46,3 +46,6 @@ findProject(":item:gift")?.name = "gift"
 include("item:skill")
 findProject(":item:skill")?.name = "skill"
 include("element")
+include("domain")
+include("adapters")
+include("infra")

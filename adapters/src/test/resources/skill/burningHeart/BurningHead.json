@@ -1,0 +1,10 @@
+{
+  "id": "BurningHead",
+  "category": "BurningHeart",
+  "material": {
+    "Base": "torch"
+  },
+  "stat": {
+    "attack": "20 + 0.6 * <player.attack>"
+  }
+}
