@@ -9,7 +9,7 @@ import java.util.Properties
 open class I18nKeyGeneratorTask : DefaultTask() {
     @TaskAction
     fun run() {
-        val enumTargetFile = File("${project.rootProject.projectDir}/adapters/src/main/kotlin/service/i18n/EI18nKeys.kt")
+        val enumTargetFile = File("${project.rootProject.projectDir}/domain/src/main/kotlin/processors/i18n/EI18nKeys.kt")
 
         val messages = Properties()
         val resourcePath = "/i18n/fr_FR.properties"
@@ -18,7 +18,7 @@ open class I18nKeyGeneratorTask : DefaultTask() {
 
         val enumContent =
             buildString {
-                appendLine("package service.i18n\n")
+                appendLine("package processors.i18n\n")
                 appendLine("enum class EI18nKeys(val key: String) {")
 
                 messages.forEach { key, _ ->

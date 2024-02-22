@@ -15,7 +15,7 @@ class WeaponRepositoryFileImpl(
         category: WeaponCategory,
         id: WeaponId,
     ): WeaponEntity {
-        val json = fileReaderService.read("/weapon/${category.toString().lowercase()}/$id.json")
+        val json = fileReaderService.read("/item/weapon/${category.toString().lowercase()}/$id.json")
 
         return deserializerService.deserialize(json)
     }

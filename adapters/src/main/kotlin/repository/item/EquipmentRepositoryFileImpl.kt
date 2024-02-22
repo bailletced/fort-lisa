@@ -15,7 +15,7 @@ class EquipmentRepositoryFileImpl(
         category: EquipmentCategory,
         id: EquipmentId,
     ): EquipmentEntity {
-        val json = fileReaderService.read("/equipment/${category.toString().lowercase()}/$id.json")
+        val json = fileReaderService.read("/item/equipment/${category.toString().lowercase()}/$id.json")
 
         return deserializerService.deserialize(json)
     }

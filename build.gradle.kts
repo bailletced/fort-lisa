@@ -31,7 +31,7 @@ subprojects {
 tasks.register<I18nKeyGeneratorTask>("i18nEnum") {
     doFirst {
         copy {
-            from("adapters/src/main/resources/i18n")
+            from("domain/src/main/resources/i18n")
             into("buildSrc/src/main/resources/i18n")
         }
     }

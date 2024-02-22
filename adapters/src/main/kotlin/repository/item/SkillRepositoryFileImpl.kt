@@ -18,7 +18,7 @@ class SkillRepositoryFileImpl(
     ): SkillEntity {
         val json =
             fileReaderService.read(
-                "/skill/${category.toString()
+                "/item/skill/${category.toString()
                     .replaceFirstChar { it.lowercase() }}/$id.json",
             )
 
