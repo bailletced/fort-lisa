@@ -7,7 +7,6 @@ class I18nServiceImpl() {
     private val messages: Map<Locale, Properties> =
         mapOf(
             Locale.FRANCE to loadMessages(Locale.FRANCE),
-            Locale.ENGLISH to loadMessages(Locale.ENGLISH),
         )
 
     private fun loadMessages(locale: Locale): Properties {

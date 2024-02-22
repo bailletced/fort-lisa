@@ -1,3 +1,5 @@
+import tasks.i18n.I18nKeyGeneratorTask
+
 plugins {
     kotlin("jvm") version "1.9.22"
     kotlin("plugin.serialization") version "1.9.22"
@@ -23,5 +25,14 @@ subprojects {
 
     configure<org.jlleitschuh.gradle.ktlint.KtlintExtension> {
         debug.set(true)
+    }
+}
+
+tasks.register<I18nKeyGeneratorTask>("i18nEnum") {
+    doFirst {
+        copy {
+            from("adapters/src/main/resources/i18n")
+            into("buildSrc/src/main/resources/i18n")
+        }
     }
 }

@@ -8,7 +8,7 @@ class TestI18nServiceImpl {
     @Test
     internal fun test() {
         val i18nService = I18nServiceImpl()
-        val message = i18nService.getMessage(Locale.FRANCE, "CountryName")
+        val message = i18nService.getMessage(Locale.FRANCE, EI18nKeys.ItemSkillBurningHeartBurningHeadTitle.key)
         println(message)
     }
 }
