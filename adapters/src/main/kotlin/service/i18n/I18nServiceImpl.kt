@@ -1,38 +1,24 @@
 package service.i18n
 
+import gateways.repository.i18n.I18nRepository
 import gateways.service.i18n.I18nService
 import java.util.Locale
-import java.util.Properties
 
-class I18nServiceImpl() : I18nService {
-    private val messages: Map<Locale, Properties> =
-        mapOf(
-            Locale.FRANCE to loadMessages(Locale.FRANCE),
-        )
-
-    private fun loadMessages(locale: Locale): Properties {
-        val messages = Properties()
-        val resourcePath = "/i18n/$locale.properties"
-        val resourceStream = javaClass.getResourceAsStream(resourcePath)
-        messages.load(resourceStream)
-
-        return messages
+class I18nServiceImpl(val i18nRepository: I18nRepository) : I18nService {
+    override fun getMessage(
+        locale: Locale,
+        key: String,
+    ): String {
+        return i18nRepository.getMessage(locale, key)
     }
 
     override fun getMessage(
         locale: Locale,
         key: String,
+        valueMap: Map<String, String>,
     ): String {
-        return messages.getValue(locale).getProperty(key, "Message not found: $key")
-    }
-
-    fun getMessage(
-        locale: Locale,
-        key: String,
-        params: Map<String, String>,
-    ): String {
-        var message = messages.getValue(locale).getProperty(key, "Message not found: $key")
-        for ((key, value) in params) {
+        var message = i18nRepository.getMessage(locale, key)
+        for ((key, value) in valueMap) {
             message = message.replace("{$key}", value)
         }
         return message

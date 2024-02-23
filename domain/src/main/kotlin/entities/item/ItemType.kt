@@ -1,6 +1,6 @@
 package entities.item
 
-enum class EItemType {
+enum class ItemType {
     Equipment,
     Weapon,
     Skill,

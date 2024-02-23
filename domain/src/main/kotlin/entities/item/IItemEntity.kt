@@ -10,15 +10,13 @@ interface IItemEntityCategory
 interface IItemEntityId
 
 interface IItemEntity {
-    val type: EItemType
+    val type: ItemType
     val category: IItemEntityCategory
     val id: IItemEntityId
     val stat: IStatEntity
     val material: Map<GiftWill, String>
-}
 
-interface IDynamicItemEntity {
-    val tier: Int
+    val tier: Int?
     val giftCapacity: GiftCapacityEntity?
-    val elements: List<IElement>
+    val elements: List<IElement>?
 }

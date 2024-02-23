@@ -1,11 +1,11 @@
 package entities.item.weapon
 
-import entities.item.EItemType
 import entities.item.IItemEntityCategory
+import entities.item.ItemType
 
-enum class WeaponCategory(val type: EItemType) : IItemEntityCategory {
-    Bow(EItemType.Weapon),
-    CrossBow(EItemType.Weapon),
-    Sword(EItemType.Weapon),
-    Staff(EItemType.Weapon),
+enum class WeaponCategory(val type: ItemType) : IItemEntityCategory {
+    Bow(ItemType.Weapon),
+    CrossBow(ItemType.Weapon),
+    Sword(ItemType.Weapon),
+    Staff(ItemType.Weapon),
 }
