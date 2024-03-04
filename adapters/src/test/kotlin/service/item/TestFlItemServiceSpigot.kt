@@ -1,13 +1,12 @@
 package service.item
 
 import entities.item.ItemType
+import entities.item.equipment.Equipment
 import entities.item.equipment.EquipmentCategory
-import entities.item.equipment.EquipmentEntity
 import entities.item.equipment.EquipmentId
-import entities.player.PlayerStat
+import entities.stat.StatPlayer
 import org.junit.Test
 import repository.i18n.I18nRepositoryProperties
-import repository.item.ItemEntityRepositoryFileImpl
 import repository.item.fl.FlItemEntityRepositoryMemory
 import service.deserializer.DeserializerServiceImpl
 import service.file.FileReaderServiceResource
@@ -17,7 +16,7 @@ class TestFlItemServiceSpigot {
     val i18nService = I18nServiceImpl(I18nRepositoryProperties())
     val flItemEntityRepo = FlItemEntityRepositoryMemory()
     val equipmentEntityRepo =
-        ItemEntityRepositoryFileImpl(FileReaderServiceResource(), DeserializerServiceImpl(EquipmentEntity.serializer()))
+        ItemServiceFile(FileReaderServiceResource(), DeserializerServiceImpl(Equipment.serializer()))
 
     val flItemServiceSpigot =
         FlItemServiceSpigot(
@@ -29,8 +28,8 @@ class TestFlItemServiceSpigot {
     @Test
     internal fun generateLore() {
         val playerStat =
-            PlayerStat(
-                attack = "20",
+            StatPlayer(
+                attack = 20.0,
             )
 
         val lore =

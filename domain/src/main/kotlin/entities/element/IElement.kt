@@ -5,7 +5,7 @@ import entities.element.mechanic.MechanicImmunityEntity
 import entities.element.mechanic.MechanicSkillEntity
 import entities.element.trigger.TriggerClickEntity
 import entities.element.trigger.TriggerId
-import entities.element.trigger.TriggerWearingEntity
+import entities.element.trigger.TriggerWearing
 import kotlinx.serialization.DeserializationStrategy
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.JsonContentPolymorphicSerializer
@@ -42,7 +42,7 @@ object DElementSerializer : JsonContentPolymorphicSerializer<IElement>(IElement:
             ElementType.Trigger.toString() -> {
                 when (id) {
                     TriggerId.Click.toString() -> TriggerClickEntity.serializer()
-                    TriggerId.Wearing.toString() -> TriggerWearingEntity.serializer()
+                    TriggerId.Wearing.toString() -> TriggerWearing.serializer()
                     else -> throw Exception("Serialization error $type: unknown id $id")
                 }
             }

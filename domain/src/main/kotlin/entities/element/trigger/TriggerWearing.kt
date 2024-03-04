@@ -6,7 +6,7 @@ import entities.element.IElementData
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class TriggerWearingEntity(
+data class TriggerWearing(
     override val type: ElementType = ElementType.Trigger,
     override val id: TriggerId = TriggerId.Wearing,
     override val data: IElementData? = null,

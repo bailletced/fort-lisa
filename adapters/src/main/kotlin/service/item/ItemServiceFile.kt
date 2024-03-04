@@ -1,4 +1,4 @@
-package repository.item
+package service.item
 
 import entities.item.IItemEntity
 import entities.item.IItemEntityCategory
@@ -8,7 +8,7 @@ import gateways.repository.item.IItemEntityRepository
 import gateways.service.deserializer.DeserializerService
 import gateways.service.file.IFileReaderService
 
-class ItemEntityRepositoryFileImpl<T : IItemEntity>(
+class ItemServiceFile<T : IItemEntity>(
     private val fileReaderService: IFileReaderService,
     private val deserializerService: DeserializerService<T>,
 ) : IItemEntityRepository<T> {

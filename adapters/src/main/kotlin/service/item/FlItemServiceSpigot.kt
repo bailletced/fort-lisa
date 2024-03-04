@@ -5,7 +5,7 @@ import entities.item.IItemEntityCategory
 import entities.item.IItemEntityId
 import entities.item.ItemType
 import entities.item.fl.IGameItemEntity
-import entities.player.PlayerStat
+import entities.stat.StatPlayer
 import gateways.repository.item.IItemEntityRepository
 import gateways.repository.item.fl.IFlItemRepository
 import gateways.service.i18n.I18nService
@@ -45,7 +45,7 @@ class FlItemServiceSpigot<T : IItemEntity>(
 
     override fun generateLore(
         itemEntity: IItemEntity,
-        playerStat: PlayerStat,
+        playerStat: StatPlayer,
     ): List<String> {
         fun transformKey(
             itemEntity: IItemEntity,

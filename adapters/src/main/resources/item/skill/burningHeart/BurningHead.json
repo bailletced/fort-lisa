@@ -4,7 +4,7 @@
   "material": {
     "Base": "torch"
   },
-  "stat": {
-    "attack": "20 + 0.6 * <player.attack>"
-  }
+  "formula": {
+      "main": "20 + 0.6 * <player.attack>"
+    }
 }

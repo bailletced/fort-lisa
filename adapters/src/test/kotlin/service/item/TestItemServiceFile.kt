@@ -1,40 +1,38 @@
 
-package repository.item
+package service.item
 
 import entities.element.mechanic.*
 import entities.element.trigger.TriggerClick
 import entities.element.trigger.TriggerClickEntity
 import entities.element.trigger.TriggerClickEntityData
-import entities.element.trigger.TriggerWearingEntity
+import entities.element.trigger.TriggerWearing
 import entities.item.ItemType
+import entities.item.equipment.Equipment
 import entities.item.equipment.EquipmentCategory
-import entities.item.equipment.EquipmentEntity
 import entities.item.equipment.EquipmentId
-import entities.item.equipment.EquipmentStat
-import entities.item.gift.GiftCapacityEntity
+import entities.item.gift.GiftCapacity
 import entities.item.gift.GiftWill
-import entities.item.skill.SkillEntity
+import entities.item.skill.Skill
 import entities.item.skill.SkillId
-import entities.item.skill.SkillStat
+import entities.item.weapon.Weapon
 import entities.item.weapon.WeaponCategory
-import entities.item.weapon.WeaponEntity
 import entities.item.weapon.WeaponId
-import entities.item.weapon.WeaponStat
+import entities.stat.StatEquipment
 import org.junit.Test
 import service.deserializer.DeserializerServiceImpl
 import service.file.FileReaderServiceResource
 import kotlin.test.assertEquals
 
-class TestItemEntityRepositoryFileFileImpl {
+class TestItemServiceFile {
     val fileReaderService = FileReaderServiceResource()
 
     @Test
     internal fun findEquipment() {
         val laurelCrown =
-            ItemEntityRepositoryFileImpl(
+            ItemServiceFile(
                 fileReaderService,
                 DeserializerServiceImpl(
-                    EquipmentEntity
+                    Equipment
                         .serializer(),
                 ),
             ).find(
@@ -45,21 +43,21 @@ class TestItemEntityRepositoryFileFileImpl {
 
         val expectedResult =
             (
-                EquipmentEntity(
+                Equipment(
                     category = EquipmentCategory.Helmet,
                     id = EquipmentId.LaurelCrown,
                     material = mapOf(GiftWill.Base to "leather helmet"),
                     tier = 1,
                     giftCapacity =
-                        GiftCapacityEntity(
+                        GiftCapacity(
                             1,
                             1,
                             1,
                         ),
-                    stat = EquipmentStat(defence = "2"),
+                    stat = StatEquipment(defence = 2.0),
                     elements =
                         listOf(
-                            TriggerWearingEntity(
+                            TriggerWearing(
                                 children =
                                     listOf(
                                         MechanicSkillEntity(
@@ -87,21 +85,21 @@ class TestItemEntityRepositoryFileFileImpl {
     @Test
     internal fun findSkill() {
         val burningHead =
-            ItemEntityRepositoryFileImpl(
+            ItemServiceFile(
                 fileReaderService,
                 DeserializerServiceImpl(
-                    SkillEntity
+                    Skill
                         .serializer(),
                 ),
             ).find(ItemType.Skill, GiftWill.BurningHeart, SkillId.BurningHead)
 
         val expectedResult =
             (
-                SkillEntity(
+                Skill(
                     category = GiftWill.BurningHeart,
                     id = SkillId.BurningHead,
                     material = mapOf(GiftWill.Base to "torch"),
-                    stat = SkillStat(attack = "20 + 0.6 * <player.attack>"),
+                    formula = mapOf("main" to "20 + 0.6 * <player.attack>"),
                 )
             )
         assertEquals(burningHead, expectedResult)
@@ -110,28 +108,28 @@ class TestItemEntityRepositoryFileFileImpl {
     @Test
     internal fun findWeapon() {
         val limbOfWisdom =
-            ItemEntityRepositoryFileImpl(
+            ItemServiceFile(
                 fileReaderService,
                 DeserializerServiceImpl(
-                    WeaponEntity
+                    Weapon
                         .serializer(),
                 ),
             ).find(ItemType.Weapon, WeaponCategory.Staff, WeaponId.LimbOfWisdom)
 
         val expectedResult =
             (
-                WeaponEntity(
+                Weapon(
                     category = WeaponCategory.Staff,
                     id = WeaponId.LimbOfWisdom,
                     material = mapOf(GiftWill.Base to "carrot on stick"),
                     tier = 1,
                     giftCapacity =
-                        GiftCapacityEntity(
+                        GiftCapacity(
                             1,
                             1,
                             1,
                         ),
-                    stat = WeaponStat(attack = "2"),
+                    formula = mapOf("main" to "2 + 0.6 * <player.attack>"),
                     elements =
                         listOf(
                             TriggerClickEntity(

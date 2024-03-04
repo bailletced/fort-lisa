@@ -10,8 +10,8 @@
     "intellect": 1,
     "memory": 1
   },
-  "stat": {
-    "attack": "2"
+  "formula": {
+      "main": "2 + 0.6 * <player.attack>"
   },
   "elements": [
     {
