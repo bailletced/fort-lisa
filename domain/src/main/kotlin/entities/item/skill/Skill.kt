@@ -16,5 +16,5 @@ data class Skill(
     override val elements: List<IElement>? = listOf(),
     override val tier: Int? = null,
     override val giftCapacity: GiftCapacity? = GiftCapacity(0, 0, 0),
-    val formula: Map<String, String>? = null,
+    val mapFormula: Map<String, String> = mapOf(),
 ) : IItemEntity

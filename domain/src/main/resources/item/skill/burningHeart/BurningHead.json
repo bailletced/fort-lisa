@@ -4,7 +4,7 @@
   "material": {
     "Base": "torch"
   },
-  "formula": {
-      "main": "20 + 0.6 * <player.attack>"
-    }
+  "mapFormula": {
+    "EffectDamage-1": "amount: 20 + 0.6 * <player.attack>"
+  }
 }

@@ -99,10 +99,11 @@ class TestItemServiceFile {
                     category = GiftWill.BurningHeart,
                     id = SkillId.BurningHead,
                     material = mapOf(GiftWill.Base to "torch"),
-                    formula = mapOf("main" to "20 + 0.6 * <player.attack>"),
+                    mapFormula = mapOf("EffectDamage-1" to "amount: 20 + 0.6 * <player.attack>"),
                 )
             )
-        assertEquals(burningHead, expectedResult)
+
+        assertEquals(expectedResult, burningHead)
     }
 
     @Test
@@ -129,7 +130,6 @@ class TestItemServiceFile {
                             1,
                             1,
                         ),
-                    formula = mapOf("main" to "2 + 0.6 * <player.attack>"),
                     elements =
                         listOf(
                             TriggerClickEntity(

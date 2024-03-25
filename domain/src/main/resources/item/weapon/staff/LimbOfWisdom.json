@@ -10,9 +10,6 @@
     "intellect": 1,
     "memory": 1
   },
-  "formula": {
-      "main": "2 + 0.6 * <player.attack>"
-  },
   "elements": [
     {
       "type": "Trigger",
