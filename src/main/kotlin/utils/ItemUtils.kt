@@ -1,19 +1,16 @@
 package utils
 
 import formula.domain.FormulaManager
-import item.domain.entities.IItemEntity
 import i18n.domain.services.I18nService
+import item.domain.entities.IItemEntity
 import stat.domain.entities.StatPlayer
-import java.util.*
+import java.util.Locale
 
 class ItemUtils(
     private val itemEntity: IItemEntity,
-    private val i18nService: I18nService
+    private val i18nService: I18nService,
 ) {
-    fun generateLore(
-        playerStat: StatPlayer,
-    ): List<String> {
-
+    fun generateLore(playerStat: StatPlayer): List<String> {
         val i18nString =
             StringUtils.i18nKeyFromStrings(
                 listOf(
@@ -24,14 +21,16 @@ class ItemUtils(
                 "item.",
             )
 
-        val loreItem = if (itemEntity.mapFormula?.isEmpty() == false) {
-            FormulaManager(itemEntity.mapFormula!!)
-        } else null
+        val loreItem =
+            if (itemEntity.mapFormula?.isEmpty() == false) {
+                FormulaManager(itemEntity.mapFormula!!)
+            } else {
+                null
+            }
 
         return listOf(
             i18nService.getMessage(Locale.FRANCE, "$i18nString.title"),
 //            FormulaManager(itemEntity.mapFormula)i18nService.getMessage(Locale.FRANCE, "$i18nString.lore"),
         )
     }
-
 }

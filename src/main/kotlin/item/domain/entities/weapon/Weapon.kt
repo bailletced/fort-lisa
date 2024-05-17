@@ -16,5 +16,5 @@ data class Weapon(
     override val material: Map<GiftWill, String>,
     override val giftCapacity: GiftCapacity?,
     override val elements: List<IElement>,
-    override val mapFormula: Map<String, String>?
+    override val mapFormula: Map<String, String>?,
 ) : IItemEntity

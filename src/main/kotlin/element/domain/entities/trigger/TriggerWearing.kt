@@ -5,7 +5,6 @@ import element.domain.entities.IElement
 import element.domain.entities.IElementData
 import kotlinx.serialization.Serializable
 
-
 @Serializable
 data class TriggerWearing(
     override val type: ElementType = ElementType.Trigger,

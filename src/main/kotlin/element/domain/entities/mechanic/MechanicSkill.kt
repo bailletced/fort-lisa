@@ -7,7 +7,6 @@ import element.domain.entities.IElementData
 import item.domain.entities.skill.SkillId
 import kotlinx.serialization.Serializable
 
-
 @Serializable
 data class MechanicSkillEntity(
     override val type: ElementType = ElementType.Mechanic,

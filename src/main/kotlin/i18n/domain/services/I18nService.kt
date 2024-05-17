@@ -1,6 +1,7 @@
 package i18n.domain.services
 
-import java.util.*
+import java.util.Locale
+import java.util.Properties
 
 class I18nService() {
     private var messages: Map<Locale, Properties>

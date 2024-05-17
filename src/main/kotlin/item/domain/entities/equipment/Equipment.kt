@@ -18,5 +18,5 @@ data class Equipment(
     override val giftCapacity: GiftCapacity?,
     override val elements: List<IElement>,
     val stat: StatEquipment,
-    override val mapFormula: Map<String, String>?
+    override val mapFormula: Map<String, String>?,
 ) : IItemEntity

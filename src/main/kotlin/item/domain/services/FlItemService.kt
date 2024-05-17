@@ -5,9 +5,9 @@ import item.domain.entities.IItemEntity
 import item.domain.entities.IItemEntityCategory
 import item.domain.entities.IItemEntityId
 import item.domain.entities.ItemType
-import item.infra.GameItemEntity
 import item.domain.gateways.repositories.IFlItemRepository
 import item.domain.gateways.repositories.IItemEntityRepository
+import item.infra.GameItemEntity
 import stat.domain.entities.StatPlayer
 import utils.StringUtils
 import java.util.Locale
@@ -21,7 +21,7 @@ class FlItemService<T : IItemEntity>(
     val itemEntityRepo: IItemEntityRepository<T>,
     val flItemRepo: IFlItemRepository,
 ) {
-     fun generate(
+    fun generate(
         type: ItemType,
         category: IItemEntityCategory,
         id: IItemEntityId,

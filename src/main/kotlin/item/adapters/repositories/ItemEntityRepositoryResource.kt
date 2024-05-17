@@ -5,17 +5,14 @@ import item.domain.entities.IItemEntityCategory
 import item.domain.entities.IItemEntityId
 import item.domain.entities.ItemType
 import item.domain.entities.equipment.Equipment
-import item.domain.entities.skill.Skill
 import item.domain.gateways.repositories.IItemEntityRepository
 import item.domain.services.DeserializerService
-import kotlinx.serialization.DeserializationStrategy
 import kotlinx.serialization.InternalSerializationApi
 import kotlinx.serialization.KSerializer
 import kotlinx.serialization.serializer
 import utils.file.FileReaderResource
 
-class ItemEntityRepositoryResource<T : IItemEntity>(
-) : IItemEntityRepository<T> {
+class ItemEntityRepositoryResource<T : IItemEntity>() : IItemEntityRepository<T> {
     @OptIn(InternalSerializationApi::class)
     override fun find(
         type: ItemType,
