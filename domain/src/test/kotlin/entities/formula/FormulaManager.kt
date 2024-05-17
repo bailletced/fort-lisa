@@ -13,7 +13,7 @@ class FormulaManagerTest {
                 "EffectDamage-1" to "amount: 20 + 0.6 * <player.attack>",
             )
 
-        val result = FormulaManager(mapFormula).getFormula(EFormula.Damage, "1")
+        val result = FormulaManager(mapFormula).getFormula(EFormulaAttribute.Damage, "1")
         assertEquals("amount: 20 + 0.6 * <player.attack>", result)
     }
 
@@ -27,7 +27,7 @@ class FormulaManagerTest {
 
         val playerStat = StatPlayer(attack = 20.0)
         val manager = FormulaManager(mapFormula)
-        val attack = manager.evaluate(manager.getFormula(EFormula.Damage, "1"), playerStat)
+        val attack = manager.evaluate(manager.getFormula(EFormulaAttribute.Damage, "1"), playerStat)
 
         assertEquals(20 + 0.6 * 20, attack)
     }

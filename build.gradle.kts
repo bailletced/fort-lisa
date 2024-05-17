@@ -10,6 +10,12 @@ repositories {
     mavenCentral()
 }
 
+dependencies {
+    testImplementation("org.jetbrains.kotlin:kotlin-test")
+    implementation("com.notkamui.libs:keval:1.0.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
+}
+
 allprojects {
     group = "com.fort-lisa"
     version = "1.0-SNAPSHOT"

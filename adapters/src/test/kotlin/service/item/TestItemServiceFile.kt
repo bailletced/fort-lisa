@@ -32,8 +32,7 @@ class TestItemServiceFile {
             ItemServiceFile(
                 fileReaderService,
                 DeserializerServiceImpl(
-                    Equipment
-                        .serializer(),
+                    Equipment.serializer(),
                 ),
             ).find(
                 ItemType.Equipment,

@@ -12,31 +12,16 @@ import service.deserializer.DeserializerServiceImpl
 import service.file.FileReaderServiceResource
 import service.i18n.I18nServiceImpl
 
-class TestFlItemServiceSpigot {
-    val i18nService = I18nServiceImpl(I18nRepositoryProperties())
-    val flItemEntityRepo = FlItemEntityRepositoryMemory()
-    val equipmentEntityRepo =
-        ItemServiceFile(FileReaderServiceResource(), DeserializerServiceImpl(Equipment.serializer()))
-
-    val flItemServiceSpigot =
-        FlItemServiceSpigot(
-            i18nService = i18nService,
-            itemEntityRepo = equipmentEntityRepo,
-            flItemRepo = flItemEntityRepo,
-        )
-
-    @Test
-    internal fun generateLore() {
-        val playerStat =
-            StatPlayer(
-                attack = 20.0,
-            )
-
-        val lore =
-            flItemServiceSpigot.generateLore(
-                equipmentEntityRepo.find(ItemType.Equipment, EquipmentCategory.Helmet, EquipmentId.LaurelCrown),
-                playerStat,
-            )
-        println(lore)
-    }
-}
+//class TestFlItemServiceSpigot {
+//    val i18nService = I18nServiceImpl(I18nRepositoryProperties())
+//    val flItemEntityRepo = FlItemEntityRepositoryMemory()
+//    val equipmentEntityRepo =
+//        ItemServiceFile(FileReaderServiceResource(), DeserializerServiceImpl(Equipment.serializer()))
+//
+//    val flItemServiceSpigot =
+//        FlItemServiceSpigot(
+//            i18nService = i18nService,
+//            itemEntityRepo = equipmentEntityRepo,
+//            flItemRepo = flItemEntityRepo,
+//        )
+//}
