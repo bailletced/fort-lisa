@@ -1,6 +1,6 @@
-package utils.file
+package shared.services.file
 
-class FileReaderResource {
+class FileReaderResourceService {
     fun read(path: String): String {
         val content =
             this::class.java.getResource(path)?.readText()

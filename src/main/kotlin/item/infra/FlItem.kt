@@ -1,8 +1,8 @@
 package item.infra
 
-import item.domain.entities.IItemEntity
+import item.domain.entities.IItem
 
-class FlItem<T : IItemEntity>(
+class FlItem<T : IItem>(
     val entity: T,
     val mcItem: GameItemEntity,
 )

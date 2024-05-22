@@ -13,6 +13,9 @@
   "stat": {
     "defence": "2"
   },
+  "mapFormula": {
+    "EffectDamage-1": "20 + 0.6 * <player.attack>"
+  },
   "elements": [
     {
       "type": "Trigger",

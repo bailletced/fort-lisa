@@ -8,7 +8,7 @@ interface IItemEntityCategory
 
 interface IItemEntityId
 
-interface IItemEntity {
+interface IItem {
     val type: ItemType
     val category: IItemEntityCategory
     val id: IItemEntityId

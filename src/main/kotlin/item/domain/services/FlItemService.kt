@@ -1,24 +1,24 @@
 package item.domain.services
 
-import i18n.domain.services.I18nService
-import item.domain.entities.IItemEntity
+import item.domain.entities.IItem
 import item.domain.entities.IItemEntityCategory
 import item.domain.entities.IItemEntityId
 import item.domain.entities.ItemType
 import item.domain.gateways.repositories.IFlItemRepository
-import item.domain.gateways.repositories.IItemEntityRepository
+import item.domain.gateways.repositories.IItemRepository
 import item.infra.GameItemEntity
+import shared.StringUtils
+import shared.services.i18n.I18nService
 import stat.domain.entities.StatPlayer
-import utils.StringUtils
 import java.util.Locale
 
 fun String.decapitalizeFirstChar(): String {
     return this[0].lowercase() + substring(1)
 }
 
-class FlItemService<T : IItemEntity>(
+class FlItemService<T : IItem>(
     val i18nService: I18nService,
-    val itemEntityRepo: IItemEntityRepository<T>,
+    val itemEntityRepo: IItemRepository<T>,
     val flItemRepo: IFlItemRepository,
 ) {
     fun generate(
@@ -38,16 +38,16 @@ class FlItemService<T : IItemEntity>(
         return itemEntityRepo.find(type, category, id)
     }
 
-    fun generateGameItemEntity(entity: IItemEntity): GameItemEntity {
+    fun generateGameItemEntity(entity: IItem): GameItemEntity {
         TODO("Not yet implemented")
     }
 
     fun generateLore(
-        itemEntity: IItemEntity,
+        itemEntity: IItem,
         playerStat: StatPlayer,
     ): List<String> {
         fun transformKey(
-            itemEntity: IItemEntity,
+            itemEntity: IItem,
             key: String,
         ): String {
             return "item.${itemEntity.type.toString().decapitalizeFirstChar()}" +

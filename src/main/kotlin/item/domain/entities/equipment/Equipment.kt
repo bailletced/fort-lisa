@@ -1,7 +1,7 @@
 package item.domain.entities.equipment
 
 import element.domain.entities.IElement
-import item.domain.entities.IItemEntity
+import item.domain.entities.IItem
 import item.domain.entities.ItemType
 import item.domain.entities.gift.GiftCapacity
 import item.domain.entities.gift.GiftWill
@@ -19,4 +19,4 @@ data class Equipment(
     override val elements: List<IElement>,
     val stat: StatEquipment,
     override val mapFormula: Map<String, String>?,
-) : IItemEntity
+) : IItem

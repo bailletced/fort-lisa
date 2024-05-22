@@ -1,13 +1,13 @@
 package item.domain.gateways.repositories
 
-import item.domain.entities.IItemEntity
+import item.domain.entities.IItem
 import item.infra.FlItem
 
 interface IFlItemRepository {
-    fun find(uuid: String): FlItem<IItemEntity>?
+    fun find(uuid: String): FlItem<IItem>?
 
     fun save(
         uuid: String,
-        flItem: FlItem<IItemEntity>,
+        flItem: FlItem<IItem>,
     )
 }

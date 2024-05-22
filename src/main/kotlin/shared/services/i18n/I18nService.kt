@@ -1,4 +1,4 @@
-package i18n.domain.services
+package shared.services.i18n
 
 import java.util.Locale
 import java.util.Properties

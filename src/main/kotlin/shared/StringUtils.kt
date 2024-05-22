@@ -1,4 +1,4 @@
-package utils
+package shared
 
 fun String.decapitalizeFirstChar(): String {
     return this[0].lowercase() + substring(1)

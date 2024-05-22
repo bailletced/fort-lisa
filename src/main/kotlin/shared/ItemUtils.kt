@@ -1,13 +1,13 @@
-package utils
+package shared
 
 import formula.domain.FormulaManager
-import i18n.domain.services.I18nService
-import item.domain.entities.IItemEntity
+import item.domain.entities.IItem
+import shared.services.i18n.I18nService
 import stat.domain.entities.StatPlayer
 import java.util.Locale
 
 class ItemUtils(
-    private val itemEntity: IItemEntity,
+    private val itemEntity: IItem,
     private val i18nService: I18nService,
 ) {
     fun generateLore(playerStat: StatPlayer): List<String> {

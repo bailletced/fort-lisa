@@ -1,24 +1,29 @@
-package service.i18n
+package shared.services.i18n
 
 import org.junit.Test
-import repository.i18n.I18nRepositoryProperties
 import java.util.Locale
 import kotlin.test.assertEquals
 
-class TestI18nServiceImpl {
-    val i18nRepoProperies = I18nRepositoryProperties()
-    val i18nServiceImpl = I18nServiceImpl(i18nRepoProperies)
+class TestI18nService {
+    @Test
+    internal fun testGetKey() {
+        val i18nService = I18nService()
+        val message = i18nService.getMessage(Locale.FRANCE, "test")
+        assertEquals("Tête brûlée {attack}", message)
+    }
 
     @Test
     internal fun testGetMessage() {
-        val message = i18nServiceImpl.getMessage(Locale.FRANCE, "test")
+        val i18nService = I18nService()
+        val message = i18nService.getMessage(Locale.FRANCE, "test")
         assertEquals("Tête brûlée {attack}", message)
     }
 
     @Test
     internal fun testGetMessageWithValueMap() {
+        val i18nService = I18nService()
         val message =
-            i18nServiceImpl.getMessage(
+            i18nService.getMessage(
                 Locale.FRANCE,
                 "test",
                 mapOf
