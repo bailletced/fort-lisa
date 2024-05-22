@@ -35,7 +35,7 @@ class FlItemService<T : IItem>(
         category: IItemEntityCategory,
         id: IItemEntityId,
     ): T {
-        return itemEntityRepo.find(type, category, id)
+        return itemEntityRepo.find(category, id)
     }
 
     fun generateGameItemEntity(entity: IItem): GameItemEntity {
